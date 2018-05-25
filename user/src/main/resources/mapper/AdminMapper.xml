@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moris.user.mapper.AdminMapper">
+
+    <resultMap type="com.moris.user.entity.Admin" id="UserResultMap">
+        <id column="id" property="id"/>
+        <result column="admin_name" property="adminName"/>
+        <result column="admin_password" property="adminPassword"/>
+    </resultMap>
+
+    <select id="queryAdmin" resultMap="UserResultMap">
+        SELECT *
+        FROM admin
+        WHERE id=#{id}
+    </select>
+</mapper>

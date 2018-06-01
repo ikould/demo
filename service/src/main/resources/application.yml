@@ -1,0 +1,19 @@
+security:
+  basic:
+    enabled: true
+  user:
+    name: ikould
+    password: 09244313
+server:
+  port: 8888
+  servlet:
+    context-path: /service
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://ikould:09244313@localhost:8888/service/eureka
+
+user:
+  userServicePath: http://localhost:8801/user/

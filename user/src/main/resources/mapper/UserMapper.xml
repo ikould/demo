@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moris.user.mapper.UserMapper">
+
+    <resultMap type="com.moris.user.entity.User" id="UserResultMap">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="phone" property="phone"/>
+        <result column="phone_code" property="phoneCode"/>
+        <result column="access_token" property="accessToken"/>
+        <result column="register_time" property="registerTime"/>
+        <result column="login_time" property="loginTime"/>
+        <result column="is_rubbish" property="isRubbish"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="is_security" property="isSecurity"/>
+        <result column="register_imei" property="registerImei"/>
+        <result column="now_imei" property="nowImei"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, user_name, user_password,phone,phone_code,access_token, register_time, login_time,is_rubbish,is_delete,is_security,register_imei,now_imei
+    </sql>
+
+    <!-- 插入用户 -->
+    <insert id="insertUser" parameterType="com.moris.user.entity.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="userPassword != null">
+                user_password,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="phoneCode != null">
+                phone_code,
+            </if>
+            <if test="accessToken != null">
+                access_token,
+            </if>
+            <if test="registerTime != null">
+                register_time,
+            </if>
+            <if test="loginTime != null">
+                login_time,
+            </if>
+            <if test="isRubbish != null">
+                is_rubbish,
+            </if>
+            <if test="isDelete != null">
+                is_delete,
+            </if>
+            <if test="isSecurity != null">
+                is_security,
+            </if>
+            <if test="registerImei != null">
+                register_imei,
+            </if>
+            <if test="nowImei != null">
+                now_imei,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="userPassword != null">
+                #{userPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneCode != null">
+                #{phoneCode,jdbcType=VARCHAR},
+            </if>
+            <if test="accessToken != null">
+                #{accessToken,jdbcType=VARCHAR},
+            </if>
+            <if test="registerTime != null">
+                #{registerTime,jdbcType=INTEGER},
+            </if>
+            <if test="loginTime != null">
+                #{loginTime,jdbcType=INTEGER},
+            </if>
+            <if test="isRubbish != null">
+                #{isRubbish,jdbcType=INTEGER},
+            </if>
+            <if test="isDelete != null">
+                #{isDelete,jdbcType=INTEGER},
+            </if>
+            <if test="isSecurity != null">
+                #{isSecurity,jdbcType=INTEGER},
+            </if>
+            <if test="registerImei != null">
+                #{registerImei,jdbcType=VARCHAR},
+            </if>
+            <if test="nowImei != null">
+                #{nowImei,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 更新用户信息 -->
+    <update id="updateUser" parameterType="com.moris.user.entity.User">
+        update user
+        <set>
+            <if test="userPassword != null">
+                user_password = #{userPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="accessToken != null">
+                access_token = #{accessToken,jdbcType=VARCHAR},
+            </if>
+            <if test="registerTime != null">
+                register_time = #{registerTime,jdbcType=INTEGER},
+            </if>
+            <if test="loginTime != null">
+                login_time = #{loginTime,jdbcType=INTEGER},
+            </if>
+            <if test="isRubbish != null">
+                is_rubbish = #{isRubbish,jdbcType=INTEGER},
+            </if>
+            <if test="isDelete != null">
+                is_delete = #{isDelete,jdbcType=INTEGER},
+            </if>
+            <if test="isSecurity != null">
+                is_security = #{isSecurity,jdbcType=INTEGER},
+            </if>
+            <if test="registerImei != null">
+                register_imei = #{registerImei,jdbcType=VARCHAR},
+            </if>
+            <if test="nowImei != null">
+                now_imei = #{nowImei,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
+
+    <!-- 通过userId查询用户 -->
+    <select id="findUserById" resultMap="UserResultMap"
+            parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <!-- 通过userName查询用户 -->
+    <select id="findUserByName" resultMap="UserResultMap"
+            parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_name = #{userName,jdbcType=VARCHAR}
+    </select>
+
+    <!-- 通过phone查询用户 -->
+    <select id="findUserByPhone" resultMap="UserResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where phone = #{phone,jdbcType=VARCHAR} and phone_code = #{phoneCode,jdbcType=VARCHAR}
+    </select>
+
+    <!-- 分页查询用户 -->
+    <select id="findAllUser" resultMap="UserResultMap"
+            parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        order by id limit #{offsetStart,jdbcType=INTEGER},#{rowNums,jdbcType=INTEGER};
+    </select>
+
+    <!-- 获取最大的用户Id -->
+    <select id="findMaxUserId" resultMap="UserResultMap">
+        select *
+        from user
+        where user_id=(
+          select max(user_id) from user);
+    </select>
+</mapper>

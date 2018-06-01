@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moris.user.mapper.UserInfoMapper">
+
+    <resultMap type="com.moris.user.entity.UserInfo" id="UserInfoResultMap">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="nickname" property="nickname"/>
+        <result column="icon_path" property="iconPath"/>
+        <result column="sex" property="sex"/>
+        <result column="signature" property="signature"/>
+        <result column="birth_year" property="birthYear"/>
+        <result column="birth_month" property="birthMonth"/>
+        <result column="birth_day" property="birthDay"/>
+        <result column="location_id" property="locationId"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, nickname, icon_path, sex,signature,birth_year,birth_month,birth_day,location_id,update_time
+    </sql>
+
+    <!-- 插入 -->
+    <insert id="insertUserInfo" parameterType="com.moris.user.entity.UserInfo">
+        insert into user_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="nickname != null">
+                nickname,
+            </if>
+            <if test="iconPath != null">
+                icon_path,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="signature != null">
+                signature,
+            </if>
+            <if test="birthYear != null">
+                birth_year,
+            </if>
+            <if test="birthMonth != null">
+                birth_month,
+            </if>
+            <if test="birthDay != null">
+                birth_day,
+            </if>
+            <if test="locationId != null">
+                location_id,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="nickname != null">
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="iconPath != null">
+                #{iconPath,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="signature != null">
+                #{signature,jdbcType=VARCHAR},
+            </if>
+            <if test="birthYear != null">
+                #{birthYear,jdbcType=INTEGER},
+            </if>
+            <if test="birthMonth != null">
+                #{birthMonth,jdbcType=INTEGER},
+            </if>
+            <if test="birthDay != null">
+                #{birthDay,jdbcType=INTEGER},
+            </if>
+            <if test="locationId != null">
+                #{locationId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="deleteUserInfo" parameterType="java.lang.Integer">
+        delete from user_info
+		where user_id = #{userId}
+    </delete>
+
+    <!-- 更新 -->
+    <update id="updateUserInfo" parameterType="com.moris.user.entity.UserInfo">
+        update user_info
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="nickname != null">
+                nickname = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="iconPath != null">
+                icon_path = #{iconPath,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="signature != null">
+                signature = #{signature,jdbcType=VARCHAR},
+            </if>
+            <if test="birthYear != null">
+                birth_year = #{birthYear,jdbcType=INTEGER},
+            </if>
+            <if test="birthMonth != null">
+                birth_month = #{birthMonth,jdbcType=INTEGER},
+            </if>
+            <if test="birthDay != null">
+                birth_day = #{birthDay,jdbcType=INTEGER},
+            </if>
+            <if test="locationId != null">
+                location_id = #{locationId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=INTEGER},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
+
+    <!-- 查找 -->
+    <select id="findUserInfo" resultMap="UserInfoResultMap"
+            parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+</mapper>

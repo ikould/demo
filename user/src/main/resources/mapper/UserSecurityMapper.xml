@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moris.user.mapper.UserSecurityMapper">
+
+    <resultMap type="com.moris.user.entity.UserSecurity" id="UserSecurityResultMap">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="security_key" property="securityKey"/>
+        <result column="security_value" property="securityValue"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, security_key, security_value
+    </sql>
+
+    <!-- 插入密保问题 -->
+    <insert id="insertUserSecurity" parameterType="com.moris.user.entity.UserSecurity">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="securityKey != null">
+                security_key,
+            </if>
+            <if test="securityValue != null">
+                security_value,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="securityKey != null">
+                #{securityKey,jdbcType=VARCHAR},
+            </if>
+            <if test="securityValue != null">
+                #{securityValue,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 修改密保问题 -->
+    <update id="updateUserSecurity" parameterType="com.moris.user.entity.UserSecurity">
+        update user
+        <set>
+            <if test="securityValue != null">
+                security_value = #{securityValue,jdbcType=INTEGER},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
+
+    <!-- 查找当前用户下的所有密保问题 -->
+    <select id="findUserSecurity" resultMap="UserSecurityResultMap"
+            parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+</mapper>

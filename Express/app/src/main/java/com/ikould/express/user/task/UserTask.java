@@ -1,16 +1,15 @@
-package com.ikould.express;
+package com.ikould.express.user.task;
 
 import android.util.Log;
 
 import com.adnonstop.frame.util.EncryptionUtil;
-import com.ikould.express.network.UserNetHelper;
+import com.ikould.express.user.network.UserNetHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-import rx.Scheduler;
 import rx.schedulers.Schedulers;
 
 /**

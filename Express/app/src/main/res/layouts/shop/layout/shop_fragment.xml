@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 顶部 -->
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_180"
+        android:background="@color/app_vi"
+        android:paddingTop="@dimen/xx_60">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="在线"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_48" />
+
+        <!-- 添加 -->
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/xx_20"
+            android:gravity="center"
+            android:paddingLeft="@dimen/xx_20"
+            android:paddingRight="@dimen/xx_20"
+            android:text="上传"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_48" />
+    </RelativeLayout>
+
+    <!-- 大分类 -->
+    <LinearLayout
+        android:id="@+id/ll_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_230"
+        android:layout_below="@+id/rl_top"
+        android:background="#f5f5f5"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <!-- 最热 -->
+        <LinearLayout
+            android:id="@+id/ll_hot"
+            android:layout_width="@dimen/xx_200"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <frame.view.check.CheckTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最热"
+                android:textSize="@dimen/xx_50"
+                app:check_color="@color/app_vi_deep"
+                app:is_text_checked="true"
+                app:normal_color="@color/deep_dark" />
+
+            <View
+                android:layout_width="@dimen/xx_100"
+                android:layout_height="@dimen/xx_5"
+                android:layout_marginTop="@dimen/xx_20"
+                android:background="@color/app_vi_deep" />
+        </LinearLayout>
+
+        <!-- 最新 -->
+        <LinearLayout
+            android:id="@+id/ll_new"
+            android:layout_width="@dimen/xx_200"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <frame.view.check.CheckTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最新"
+                android:textSize="@dimen/xx_50"
+                app:check_color="@color/app_vi_deep"
+                app:normal_color="@color/deep_dark" />
+
+            <View
+                android:layout_width="@dimen/xx_100"
+                android:layout_height="@dimen/xx_5"
+                android:layout_marginTop="@dimen/xx_20"
+                android:background="@color/app_vi_deep"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <!-- 分类 -->
+        <LinearLayout
+            android:id="@+id/ll_classify"
+            android:layout_width="@dimen/xx_200"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <frame.view.check.CheckTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类"
+                android:textSize="@dimen/xx_50"
+                app:check_color="@color/app_vi_deep"
+                app:normal_color="@color/deep_dark" />
+
+            <View
+                android:layout_width="@dimen/xx_100"
+                android:layout_height="@dimen/xx_5"
+                android:layout_marginTop="@dimen/xx_20"
+                android:background="@color/app_vi_deep"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 主体内容 -->
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_type"
+        android:background="@color/white" />
+</RelativeLayout>

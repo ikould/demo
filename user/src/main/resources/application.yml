@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8801
   servlet:
     context-path: /user
 
@@ -9,9 +9,14 @@ spring:
     password: Ikould09244313!
     driver-class-name: com.mysql.jdbc.Driver
     username: ikould
+  http:
+    encoding:
+      force: true
 
 #mybatis
 mybatis_config_file: mybatis-config.xml
 mapper_path: /mapper/**.xml
 entity_package: com.ikould.**.entity
+
+
 

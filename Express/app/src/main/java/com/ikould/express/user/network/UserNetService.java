@@ -1,13 +1,10 @@
-package com.ikould.express.network;
+package com.ikould.express.user.network;
 
 import java.util.Map;
 
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.QueryMap;
-import retrofit2.http.Url;
 import rx.Observable;
 
 /**

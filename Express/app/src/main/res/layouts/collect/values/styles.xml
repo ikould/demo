@@ -1,0 +1,23 @@
+<resources>
+    <style name="collect_ll_type_total_item">
+        <item name="android:layout_width">@dimen/xx_155</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/xx_80</item>
+        <item name="android:layout_marginTop">@dimen/xx_60</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="collect_iv_type_total_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/xx_155</item>
+    </style>
+
+    <style name="collect_tv_type_total_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/xx_15</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/deep_dark</item>
+        <item name="android:textSize">@dimen/xx_40</item>
+    </style>
+</resources>

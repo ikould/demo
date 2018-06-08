@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 27
@@ -30,6 +29,8 @@ android {
                     [
                             'src/main/res/layouts/main',
                             'src/main/res/layouts/welcome',
+                            'src/main/res/layouts/collect',
+                            'src/main/res/layouts/shop',
                             'src/main/res/layouts/user',
                             'src/main/res/layouts',
                             'src/main/res'

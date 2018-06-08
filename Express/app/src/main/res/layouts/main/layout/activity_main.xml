@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- 主容器 -->
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_line" />
+
+    <!-- 分割线 -->
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_1"
+        android:layout_above="@+id/ll_bottom"
+        android:background="@color/table_line_color" />
+
+    <!-- 底部 -->
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_150"
+        android:layout_alignParentBottom="true"
+        android:background="#f5f5f5"
+        android:orientation="horizontal">
+
+        <!-- 收藏夹 -->
+        <frame.view.check.CheckLinearLayout
+            android:id="@+id/cll_collect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <frame.view.check.CheckImageView
+                android:layout_width="@dimen/xx_70"
+                android:layout_height="@dimen/xx_70"
+                android:layout_alignParentBottom="true"
+                app:check_img="@drawable/main_table_icon_collect_checked"
+                app:normal_img="@drawable/main_table_icon_collect_normal" />
+
+            <frame.view.check.CheckTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="收藏夹"
+                android:textSize="@dimen/xx_30"
+                app:check_color="@color/app_vi_deep"
+                app:normal_color="@color/dark" />
+        </frame.view.check.CheckLinearLayout>
+
+        <!-- 在线 -->
+        <frame.view.check.CheckLinearLayout
+            android:id="@+id/cll_shop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <frame.view.check.CheckImageView
+                android:layout_width="@dimen/xx_70"
+                android:layout_height="@dimen/xx_70"
+                android:layout_alignParentBottom="true"
+                app:check_img="@drawable/main_table_icon_shop_checked"
+                app:normal_img="@drawable/main_table_icon_shop_normal" />
+
+            <frame.view.check.CheckTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="在线"
+                android:textSize="@dimen/xx_30"
+                app:check_color="@color/app_vi_deep"
+                app:normal_color="@color/dark" />
+        </frame.view.check.CheckLinearLayout>
+
+        <!-- 我的 -->
+        <frame.view.check.CheckLinearLayout
+            android:id="@+id/cll_my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <frame.view.check.CheckImageView
+                android:layout_width="@dimen/xx_70"
+                android:layout_height="@dimen/xx_70"
+                android:layout_alignParentBottom="true"
+                app:check_img="@drawable/main_table_icon_my_checked"
+                app:normal_img="@drawable/main_table_icon_my_normal" />
+
+            <frame.view.check.CheckTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="我的"
+                android:textSize="@dimen/xx_30"
+                app:check_color="@color/app_vi_deep"
+                app:normal_color="@color/dark" />
+        </frame.view.check.CheckLinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,9 +1,19 @@
 server:
-  port: 8089
+  port: 8010
   servlet:
-    context-path: /user
-
+      context-path: /material
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ikould:09244313@localhost:8888/service/eureka
+  instance:
+    prefer-ip-address: true
+#sidecar:
+#  port: 8060
+#  health-uri: http://localhost:8060/health.json
 spring:
+  application:
+    name: material
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/user?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     password: Ikould09244313!
@@ -15,3 +25,5 @@ mybatis_config_file: mybatis-config.xml
 mapper_path: /mapper/**.xml
 entity_package: com.ikould.**.entity
 
+user:
+  userServicePath: http://localhost:8888/service/

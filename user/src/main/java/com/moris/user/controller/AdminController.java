@@ -14,13 +14,11 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    /**
+     * 登录
+     */
     @RequestMapping(value = "/get/{username}/{password}", method = RequestMethod.GET, produces = "application/json")
-    public String getAdmin(@PathVariable String username, @PathVariable String password) {
-        boolean isExit = adminService.queryAdmin(username, password);
-        if (isExit) {
-            return "存在";
-        } else {
-            return "不存在";
-        }
+    public boolean getAdmin(@PathVariable String username, @PathVariable String password) {
+        return adminService.queryAdmin(username, password);
     }
 }

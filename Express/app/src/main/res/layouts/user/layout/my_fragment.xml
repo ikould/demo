@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- 登录 -->
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_380"
+            android:background="#f5f5f5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/xx_50"
+                android:layout_marginTop="@dimen/xx_145"
+                android:text="欢迎您的加入"
+                android:textColor="@color/deep_dark"
+                android:textSize="@dimen/xx_50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/xx_65"
+                android:layout_marginLeft="@dimen/xx_50"
+                android:background="@color/app_vi"
+                android:includeFontPadding="false"
+                android:paddingBottom="@dimen/xx_10"
+                android:paddingLeft="@dimen/xx_20"
+                android:paddingRight="@dimen/xx_20"
+                android:paddingTop="@dimen/xx_10"
+                android:text="马上登录"
+                android:textColor="@color/deep_dark" />
+        </RelativeLayout>
+
+        <!-- 个人信息 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_500"
+            android:background="#f5f5f5"
+            android:visibility="gone">
+
+            <!-- 头像 -->
+            <ImageView
+                android:id="@+id/iv_head"
+                android:layout_width="@dimen/xx_150"
+                android:layout_height="@dimen/xx_150"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/xx_160"
+                android:src="@drawable/user_icon_default_head_no_login" />
+
+            <!-- 昵称 -->
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_head"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/xx_20"
+                android:text="昵称昵称"
+                android:textColor="@color/deep_dark"
+                android:textSize="@dimen/xx_40" />
+
+            <!-- 签名 -->
+            <TextView
+                android:id="@+id/tv_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_nickname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/xx_20"
+                android:text="个性签名个性签名个性签名"
+                android:textColor="@color/deep_grey"
+                android:textSize="@dimen/xx_30" />
+        </RelativeLayout>
+
+        <!-- 设置 -->
+        <ImageView
+            android:layout_width="@dimen/xx_70"
+            android:layout_height="@dimen/xx_70"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/xx_100"
+            android:layout_marginTop="@dimen/xx_100"
+            android:src="@drawable/user_icon_setting" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_20"
+        android:layout_below="@+id/rl_top"
+        android:background="#eee" />
+
+    <!-- 我的积分 -->
+    <RelativeLayout
+        android:id="@+id/rl_integral"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_140"
+        android:layout_below="@+id/view_line1">
+
+        <ImageView
+            android:layout_width="@dimen/xx_60"
+            android:layout_height="@dimen/xx_60"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xx_40"
+            android:src="@drawable/user_icon_integral" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xx_130"
+            android:text="我的积分"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_38" />
+
+        <ImageView
+            android:layout_width="@dimen/xx_23"
+            android:layout_height="@dimen/xx_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/xx_40"
+            android:scaleType="fitXY"
+            android:src="@drawable/user_icon_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/xx_30"
+            android:layout_marginRight="@dimen/xx_30"
+            android:background="#eee" />
+    </RelativeLayout>
+
+    <!-- 我的作品 -->
+    <RelativeLayout
+        android:id="@+id/rl_picture"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_140"
+        android:layout_below="@+id/rl_integral">
+
+        <ImageView
+            android:layout_width="@dimen/xx_60"
+            android:layout_height="@dimen/xx_60"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xx_40"
+            android:src="@drawable/user_icon_picture" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xx_130"
+            android:text="我的作品"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_38" />
+
+        <ImageView
+            android:layout_width="@dimen/xx_23"
+            android:layout_height="@dimen/xx_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/xx_40"
+            android:scaleType="fitXY"
+            android:src="@drawable/user_icon_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/xx_30"
+            android:layout_marginRight="@dimen/xx_30"
+            android:background="#eee" />
+    </RelativeLayout>
+</RelativeLayout>

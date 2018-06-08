@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_20"
+        android:background="#e5e5e5" />
+
+    <!-- 最近表情 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_120"
+        android:background="@color/app_vi"
+        android:paddingLeft="@dimen/xx_40"
+        android:paddingRight="@dimen/xx_40">
+
+        <View
+            android:layout_width="@dimen/xx_5"
+            android:layout_height="@dimen/xx_40"
+            android:layout_centerVertical="true"
+            android:background="@color/deep_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xx_25"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="最近表情"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_40" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="更多 >"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_40" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_1"
+            android:layout_alignParentBottom="true"
+            android:background="#eee" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/xx_225"
+        android:layout_height="@dimen/xx_270"
+        android:layout_marginLeft="@dimen/xx_30"
+        android:layout_marginTop="@dimen/xx_30"
+        android:background="@drawable/material_item_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/xx_1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_213"
+            android:scaleType="fitCenter"
+            android:src="@drawable/collect_pic_test" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_57"
+            android:layout_marginTop="@dimen/xx_1"
+            android:gravity="center"
+            android:text="继续嗨"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_30" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_20"
+        android:layout_marginTop="@dimen/xx_30"
+        android:background="#eee" />
+
+    <!-- 最近表情包 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_120"
+        android:background="@color/app_vi"
+        android:paddingLeft="@dimen/xx_40"
+        android:paddingRight="@dimen/xx_40">
+
+        <View
+            android:layout_width="@dimen/xx_5"
+            android:layout_height="@dimen/xx_40"
+            android:layout_centerVertical="true"
+            android:background="@color/deep_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xx_25"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="最近表情包"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_40" />
+    </RelativeLayout>
+
+    <!-- 小标题 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xx_90"
+        android:paddingLeft="@dimen/xx_40"
+        android:paddingRight="@dimen/xx_40">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="海皮三俩"
+            android:textSize="@dimen/xx_35" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="更多 >"
+            android:textSize="@dimen/xx_35" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_1"
+            android:layout_alignParentBottom="true"
+            android:background="#eee" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/xx_225"
+        android:layout_height="@dimen/xx_270"
+        android:layout_marginLeft="@dimen/xx_30"
+        android:layout_marginTop="@dimen/xx_30"
+        android:background="@drawable/material_item_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/xx_1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_213"
+            android:scaleType="fitCenter"
+            android:src="@drawable/collect_pic_test" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/xx_57"
+            android:layout_marginTop="@dimen/xx_1"
+            android:gravity="center"
+            android:text="继续嗨"
+            android:textColor="@color/deep_dark"
+            android:textSize="@dimen/xx_30" />
+    </LinearLayout>
+</LinearLayout>

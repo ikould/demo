@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AlphaView">
+        <attr name="TouchAlpha" format="float" />
+        <attr name="DisabledAlpha" format="float" />
+        <attr name="UseEnable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CheckImageView">
+        <attr name="check_img" format="reference" />
+        <attr name="normal_img" format="reference" />
+        <attr name="is_img_checked" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CheckTextView">
+        <attr name="check_color" format="color" />
+        <attr name="normal_color" format="color" />
+        <attr name="is_text_checked" format="boolean" />
+    </declare-styleable>
+</resources>
